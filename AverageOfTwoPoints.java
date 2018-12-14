@@ -9,9 +9,9 @@ public class AverageOfTwoPoints {
 
         int[][] points = new int[n][2];
 
-        // Outer loop controls the row
+        // Outer loop controls which row is currently being modified.
         for(int i = 0; i < points.length; i++){
-            // Inner loop controls the column
+            // Inner loop controls which column is currently being modified.
             for(int j = 0; j < points[i].length; j++){
 
                 points[i][j] = in.nextInt();
@@ -22,12 +22,10 @@ public class AverageOfTwoPoints {
         // Sorting the array
         Arrays.sort(points, Comparator.comparingInt(a -> a[0]));
 
-
-        // Setting the 2 middle values of points[][1](we just want the "y-coordinate") to y1 and y2, the median element is the same as what y1 outputs.
-        int y1, y2, median;
+        // Setting the 2 middle rows of points[][1](we just want the "y-coordinate") to y1 and y2, the median element is the same as what y1 outputs.
+        int y1, y2, median = y1;
         y1 = points[points.length/2][1];
         y2 = points[(points.length/2) - 1][1];
-        median = y1;
 
         // Checking if the amount of array rows is even or odd.
         if (points.length % 2 == 0) {
@@ -41,14 +39,8 @@ public class AverageOfTwoPoints {
                 System.out.println(avg);
             }
         } else {
-            // If the array rows is odd then we can just output the median.
+            // If the array rows are odd then we can just output the median.
             System.out.println(median);
         }
-
-
-
-
     }
-
-
 }
