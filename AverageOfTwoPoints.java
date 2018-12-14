@@ -23,9 +23,10 @@ public class AverageOfTwoPoints {
         Arrays.sort(points, Comparator.comparingInt(a -> a[0]));
 
         // Setting the 2 middle rows of points[][1](we just want the "y-coordinate") to y1 and y2, the median element is the same as what y1 outputs.
-        int y1, y2, median = y1;
+        int y1, y2;
         y1 = points[points.length/2][1];
         y2 = points[(points.length/2) - 1][1];
+        int median = y1;
 
         // Checking if the amount of array rows is even or odd.
         if (points.length % 2 == 0) {
